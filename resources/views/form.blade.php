@@ -29,21 +29,21 @@
                 <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Email</label>
                 <input id="email" name="email" class="@error('title') is-invalid @enderror shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" value="{{ old('email') }}">
                 @error('email')
-                <div class="text-red-500">Enter a valid email</div>
+                <div class="text-red-500">Enter a valid email (@..)</div>
                 @enderror
             </div>
             <div class="mb-6">
                 <label for="age" class="block mb-2 text-sm font-medium text-gray-900">Age</label>
                 <input id="age" name="age" class="@error('title') is-invalid @enderror shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" value="{{ old('age') }}">
                 @error('age')
-                <div class="text-red-500">Enter a valid age</div>
+                <div class="text-red-500">Enter a valid age (1-150)</div>
                 @enderror
             </div>
             <div class="mb-6">
                 <label for="rizz" class="block mb-2 text-sm font-medium text-gray-900">Rizz Meter 2.5-99.99</label>
                 <input id="rizz" name="rizz" class="@error('title') is-invalid @enderror shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" value="{{ old('rizz') }}">
                 @error('rizz')
-                <div class="text-red-500">Enter 2.5-99.99</div>
+                <div class="text-red-500">Enter (2.5-99.99)</div>
                 @enderror
             </div>
             <div class="mb-6">
