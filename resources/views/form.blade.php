@@ -17,7 +17,7 @@
     <div class="flex justify-center items-center h-screen">
         <form method="POST" action="/submit-form" class="bg-white shadow-md rounded-md p-8" enctype="multipart/form-data">
             @csrf
-            <h2 class="text-2xl font-bold mb-6">Rizz Form</h2>
+            <h2 class="text-2xl font-bold mb-6 text-center">Rizzology 101 Form</h2>
             <div class="mb-6">
                 <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Name</label>
                 <input type="text" id="name" name="name" class="@error('title') is-invalid @enderror shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " value="{{ old('name') }}">
@@ -40,7 +40,7 @@
                 @enderror
             </div>
             <div class="mb-6">
-                <label for="rizz" class="block mb-2 text-sm font-medium text-gray-900">Rizz 2.5-99.99</label>
+                <label for="rizz" class="block mb-2 text-sm font-medium text-gray-900">Rizz Meter 2.5-99.99</label>
                 <input id="rizz" name="rizz" class="@error('title') is-invalid @enderror shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" value="{{ old('rizz') }}">
                 @error('rizz')
                 <div class="text-red-500">Enter 2.5-99.99</div>
@@ -53,9 +53,11 @@
                 <div class="text-red-500">PNG, JPG, JPEG, Max: 2MB</div>
                 @enderror
             </div>
-            <button type="submit" class="mb-5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 text-white font-medium rounded-lg text-sm px-5 py-2.5">Register</button>
+            <div class="flex justify-center">
+                <button type="submit" class="mt-1 mb-2 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 text-white font-medium rounded-lg text-sm px-5 py-2.5 mx-auto">Register</button>
+            </div>
             @if(session('success'))
-            <div class="bg-green-200 text-green-800 p-4 mb-1 rounded">
+            <div class="bg-green-200 text-green-800 mt-4 p-4 rounded">
                 {{ session('success') }}
             </div>
             @endif
