@@ -16,11 +16,11 @@ class FormController extends Controller
             'image' => [
                 'required',
                 'file',
-                // 'mimes:png,jpg,jpeg',
+                // 'mimes:png,jpg,jpeg', error : Unable to guess the mime type 
                 'max:2048',
             ]
         ]);
-        
+
         return back()->with('success', 'Form submitted successfully!');
     }
 
