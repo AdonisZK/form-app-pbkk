@@ -40,7 +40,7 @@
                 @enderror
             </div>
             <div class="mb-6">
-                <label for="rizz" class="block mb-2 text-sm font-medium text-gray-900">Rizz Meter 2.5-99.99</label>
+                <label for="rizz" class="block mb-2 text-sm font-medium text-gray-900">Rizz Meter (2.5-99.99)</label>
                 <input id="rizz" name="rizz" class="@error('title') is-invalid @enderror shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" value="{{ old('rizz') }}">
                 @error('rizz')
                 <div class="text-red-500">Enter (2.5-99.99)</div>
