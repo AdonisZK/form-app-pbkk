@@ -57,8 +57,11 @@
                 <button type="submit" class="mt-1 mb-2 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 text-white font-medium rounded-lg text-sm px-5 py-2.5 mx-auto">Register</button>
             </div>
             @if(session('success'))
+
             <div class="bg-green-200 text-green-800 mt-4 p-4 rounded">
+                <img src="{{ asset('images/'.session('uploaded_image')) }}" alt="Uploaded Image">
                 {{ session('success') }}
+
             </div>
             @endif
         </form>

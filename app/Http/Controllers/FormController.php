@@ -20,6 +20,14 @@ class FormController extends Controller
                 'max:2048',
             ]
         ]);
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $filename = $file->getClientOriginalName();
+            $file->move(public_path('images'), $filename);
+
+            // Store
+            $request->session()->put('uploaded_image', $filename);
+        }
 
         return back()->with('success', 'Form submitted successfully!');
     }

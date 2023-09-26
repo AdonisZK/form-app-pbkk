@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\ImageUploadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,6 @@ use App\Http\Controllers\FormController;
 */
 
 Route::get('/', [FormController::class, 'showForm']);
+
 Route::post('/submit-form', [FormController::class, 'submitForm']);
+Route::post('image-upload', [ImageUploadController::class, 'store']);
