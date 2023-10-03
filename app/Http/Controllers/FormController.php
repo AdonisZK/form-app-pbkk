@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\FormData;
 
 class FormController extends Controller
 {
@@ -25,8 +26,19 @@ class FormController extends Controller
             $filename = $file->getClientOriginalName();
             $file->move(public_path('images'), $filename);
 
-            // Store
-            $request->session()->put('uploaded_image', $filename);
+            // Store in database
+            $formData = new FormData;
+            $formData->name = $request->input('name');
+            $formData->email = $request->input('email');
+            $formData->age = $request->input('age');
+            $formData->rizz = $request->input('rizz');
+            $formData->image = $filename;
+            $formData->save();
+
+            return redirect()->action(
+                [FormController::class, 'displayData'],
+                ['id' => $formData->id]
+            );
         }
 
         return back()->with('success', 'Form submitted successfully!');
@@ -34,6 +46,12 @@ class FormController extends Controller
 
     public function showForm()
     {
-        return view('form');
+        $formData = FormData::all();
+        return view('form', ['formData' => $formData]);
+    }
+    public function displayData($id)
+    {
+        $formData = FormData::find($id);
+        return view('display', ['formData' => $formData]);
     }
 }

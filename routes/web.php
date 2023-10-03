@@ -19,3 +19,4 @@ Route::get('/', [FormController::class, 'showForm']);
 
 Route::post('/submit-form', [FormController::class, 'submitForm']);
 Route::post('image-upload', [ImageUploadController::class, 'store']);
+Route::get('/display/{id}', [FormController::class, 'displayData']);
